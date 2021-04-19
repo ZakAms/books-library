@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <h4 class="modal-title">Book</h4>
+</div>
+
+<form (ngSubmit)="save()" #f="ngForm">
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label>Id:</label>
+      <input type="number" class="form-control"  name="id" #id="ngModel"  readonly [(ngModel)]="book.id" />
+    </div>
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" class="form-control" required minlength="1" name="title" #title="ngModel"  [(ngModel)]="book.title" />
+      <!-- <span class="help-block" *ngIf="!title.valid && title.touched">Please enter book title.</span> -->
+      <span class="help-block" *ngIf='titleExist' >Same book name is already exist.</span>
+    </div>
+    <div class="form-group">
+      <label>Author:</label>
+      <input type="text" class="form-control" required minlength="1" name="author" #author="ngModel" [(ngModel)]="book.author" />
+      <span class="help-block" *ngIf="!author.valid && author.touched">Please enter book author.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Date:</label>
+
+      <!-- <ngb-datepicker #date name="date" [(ngModel)]="book.date" [startDate]="startDate"></ngb-datepicker> -->
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" [startDate]="startDate"
+               name="date" [(ngModel)]="book.date" ngbDatepicker #date="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="date.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Image:</label>
+      <input type="text" class="form-control" minlength="1" required #image="ngModel" name="image" [(ngModel)]="book.image" />
+      <span class="help-block" *ngIf="!image.valid && image.touched">Please enter valid imageUrl path.</span>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Save</button>
+    <button class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
+  </div>
+</form>

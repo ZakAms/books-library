@@ -1,0 +1,59 @@
+<div class="card">
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <h3 class="card-header">
+    Books List
+    <a  class="btn btn-sm btn-primary float-right" (click)="addNewBook()"
+     >Add New Book</a>
+  </h3>
+  <div class="card-body">
+
+
+    <table class="table table-striped">
+      <thead>
+        <th>
+          <button class='btn btn-primary'
+              (click)='toggleImage()'>
+              {{showImage ? 'Hide' : 'Show'}} Image
+          </button>
+      </th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books" >
+          <td>
+            <img *ngIf='showImage'
+                [src]='book.image'
+                [style.width.px]='imageWidth'
+                [style.margin.px]='imageMargin'>
+        </td>
+          <td>{{book.title | titlecase | alphaNum}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.date | date}}</td>
+          <td>
+            <a class="btn btn-info btn-sm mr-2" (click)="showBook(book)">Edit</a>
+            <button class="btn btn-danger btn-sm" (click)="deleteBook(book.id, deleteModal)">Delete</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<ng-template #deleteModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete?</h4>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to delete?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" (click)="modal.close()">Yes (Delete)</button>
+    <button class="btn btn-danger" (click)="modal.dismiss()">No</button>
+  </div>
+</ng-template>
+

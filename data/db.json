@@ -1,0 +1,60 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "author": "Marijn Haverbeke",
+      "date": "2014-02-01",
+      "title": "Eloquent JavaScript, Second Edition",
+      "image": "assets/images/Eloquent JavaScript.jpg"
+    },
+    {
+      "id": 2,
+      "author": "Addy Osmani",
+      "date": "2016-09-03",
+      "title": "Learning JavaScript Design Patterns",
+      "image": "assets/images/design.jpg"
+    },
+    {
+      "id": 3,
+      "author": "Axel Rauschmayer",
+      "date": "2014-12-14",
+      "title": "Speaking JavaScript",
+      "image": "assets/images/speakingjs_cover.jpg"
+    },
+    {
+      "id": 4,
+      "author": "Eric Elliott",
+      "date": "2012-07-01",
+      "title": "Programming JavaScript Applications",
+      "image": "assets/images/Programming JavaScript Applications.jpg"
+    },
+    {
+      "id": 5,
+      "author": "Nicholas C. Zakas",
+      "date": "2014-12-14",
+      "title": "Understanding ECMAScript 6",
+      "image": "assets/images/ecmascript6.png"
+    },
+    {
+      "id": 6,
+      "author": "Kyle Simpson",
+      "date": "2014-04-07",
+      "title": "You Don't Know JS",
+      "image": "assets/images/You Don't Know JS.jpg"
+    },
+    {
+      "id": 7,
+      "author": "Richard E. Silverman",
+      "date": "2013-08-02",
+      "title": "Git Pocket Guide",
+      "image": "assets/images/Git Pocket Guide.jpg"
+    },
+    {
+      "id": 8,
+      "author": "Glenn Block, et al.",
+      "date": "2016-09-03",
+      "title": "Designing Evolvable Web APIs with ASP.NET",
+      "image": "assets/images/design.jpg"
+    }
+  ]
+}
